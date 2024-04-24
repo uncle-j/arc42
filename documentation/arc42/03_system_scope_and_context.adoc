@@ -1,0 +1,28 @@
+[[section-system-scope-and-context]]
+== System Scope and Context
+
+=== Business Context
+
+[plantuml]
+.Business Context of the Gym Management System
+----
+!include ../c4-model/Context-Diagram.puml
+----
+
+.External systems and users of the Gym Management System.
+|===
+|Neighbor |Description
+
+|Manager
+|Manages users, keycards, and training times of the gym.
+
+|Trainer
+|Manages provided training times.
+
+|Trainee
+|Views and registers for training times.
+|===
+
+==== Subdomains in the Gym Management System
+
+image::context-mapper/Context-Map_ContextMap.png[]

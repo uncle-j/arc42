@@ -1,0 +1,6 @@
+[[section-deployment-view]]
+
+
+== Deployment View
+
+NOTE: Left out for the moment due to monolithic deployment using Docker Compose and therewith a low complexity.

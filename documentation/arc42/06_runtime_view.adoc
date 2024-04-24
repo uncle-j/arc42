@@ -1,0 +1,4 @@
+[[section-runtime-view]]
+== Runtime View
+
+include::jQA:Rules[concepts="arc42:EventFlow"]

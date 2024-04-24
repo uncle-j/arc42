@@ -1,0 +1,97 @@
+[[section-building-block-view]]
+
+
+== Building Block View
+
+The building block view in this documentation is based on Simon Browns C4-Model and covers the views on:
+
+* Context-level
+* Container-level
+* Component-level
+
+Not covered is the code-level
+
+=== Level 1 - Context Diagram
+
+[plantuml]
+.Business Context of the Gym Management System
+----
+!include ../c4-model/Context-Diagram.puml
+----
+
+
+Motivation::
+* The system is a standalone system which does not require any external systems
+
+Contained Building Blocks::
+* Gym Management System
+
+=== Level 2 - Container Diagram
+
+==== White Box <Gym Management System>
+
+[plantuml]
+.Container Diagram of the Gym Management System
+----
+!include ../c4-model/Container-Diagram.puml
+----
+
+Motivation::
+* a deployment monolith was chosen instead of microservices because of:
+** low load on the system due to limited number of users
+** reduced development complexity
+** reduced deployment complexity
+
+Contained Blackboxes::
+
+.Containers of the Gym Management System.
+|===
+|Name |Description
+
+|SPA
+|The client application implemented as a SPA.
+
+|Server Application
+|The server application, implemented as a deployment monolith.
+
+|DB
+|The database.
+|===
+
+=== Level 3 - Component Diagram
+
+==== White Box <Server Application>
+
+[plantuml]
+.Component Diagram of the Server Application of the Gym Management System
+----
+!include ../c4-model/Component-Diagram.puml
+----
+
+Motivation::
+* a functional split was chosen because of:
+** quality goals focused on maintainability and modularity
+** clear separation of functional domains
+** easier navigation inside the application and therewith easier onboarding
+
+Contained Blackboxes::
+
+.Components of the Server Application of the Gym Management System.
+|===
+|Name |Description
+
+|Training Component
+|Logic regarding the management (create, update, delete) of training times.
+
+|User Component
+|Logic regarding the management (create, update, delete) of users.
+
+|Keycard Component
+|Logic regarding the managament (create, update, delete) of users.
+
+|Training Changed Topic
+|Topic for all changes on training times.
+
+|Attendance Component
+|Logic regarding registration for training times and attendance management.
+|===
